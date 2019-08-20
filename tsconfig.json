@@ -1,0 +1,17 @@
+{
+  "buildOnSave": false,
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["dom", "ESNext"],
+    "rootDirs": ["./src", "./stories"],
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

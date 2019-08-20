@@ -1,0 +1,46 @@
+@value CONTROL_LINE_HEIGHT, GRAY_COLOR, GRAY_LIGHT_COLOR, SMALL_FONT_SIZE from 'Variables.css';
+
+.wrapper {
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 8px 8px 8px 16px;
+}
+
+.header {
+  display: flex;
+  height: 24px;
+  justify-content: space-between;
+}
+
+.title {
+  justify-self: flex-start;
+  font-family: "Segoe UI", sans-serif;
+  font-size: SMALL_FONT_SIZE;
+  line-height: CONTROL_LINE_HEIGHT;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: GRAY_COLOR
+}
+
+.icons {
+  display: inline-flex;
+  justify-self: flex-end;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: GRAY_LIGHT_COLOR;
+  }
+}
