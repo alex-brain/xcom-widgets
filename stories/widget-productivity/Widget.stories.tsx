@@ -3,11 +3,20 @@ import README from './README.md';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { ProductivityWidget } from '../../src/widget-productivity/Widget';
-import { getRandomProductivityData, PRODUCTIVITY_WIDGET_DATA } from './Data';
+import { getRandomProductivityData, IProductivityWidgetData, PRODUCTIVITY_WIDGET_DATA } from './Data';
 import { button } from '@storybook/addon-knobs';
 
 const onSelectHandler = (id: string) => action(`Selected id=${id}`);
+const logDataAction = action('Log data');
 
+const ProductivityStory = (props: { data: IProductivityWidgetData; hasReload?: boolean }) => {
+  if (props.hasReload) {
+    button('Обновить', () => {}, 'Данные');
+  }
+  console.log('ProductivityStory.props.data', props.data);
+  Promise.resolve().then(() => logDataAction(props.data));
+  return <ProductivityWidget {...props.data} onSelect={onSelectHandler} />;
+};
 
 storiesOf('Productivity Widget', module)
   .addParameters({
@@ -18,26 +27,13 @@ storiesOf('Productivity Widget', module)
       title: 'Производительность за вчера, 19 августа',
       width: {
         min: 920,
-        initial: 920
+        initial: 920,
       },
     },
   })
-  .add('default', () => {
-    return <ProductivityWidget {...PRODUCTIVITY_WIDGET_DATA.DEFAULT} onSelect={onSelectHandler} />;
-  })
-  .add('random', () => {
-    button('Обновить', () => {}, 'Данные');
-    return <ProductivityWidget {...(getRandomProductivityData())} onSelect={onSelectHandler} />;
-  })
-  .add('loading', () => {
-    return <ProductivityWidget {...PRODUCTIVITY_WIDGET_DATA.LOADING} onSelect={onSelectHandler} />;
-  })
-  .add('error', () => {
-    return <ProductivityWidget {...PRODUCTIVITY_WIDGET_DATA.ERROR} onSelect={onSelectHandler} />;
-  })
-  .add('minimum data', () => {
-    return <ProductivityWidget {...PRODUCTIVITY_WIDGET_DATA.MIN} onSelect={onSelectHandler} />;
-  })
-  .add('maximum data', () => {
-    return <ProductivityWidget {...PRODUCTIVITY_WIDGET_DATA.MAX} onSelect={onSelectHandler} />;
-  });
+  .add('default', () => <ProductivityStory data={PRODUCTIVITY_WIDGET_DATA.DEFAULT} />)
+  .add('random', () => <ProductivityStory data={getRandomProductivityData()} hasReload={true} />)
+  .add('loading', () => <ProductivityStory data={PRODUCTIVITY_WIDGET_DATA.LOADING} />)
+  .add('error', () => <ProductivityStory data={PRODUCTIVITY_WIDGET_DATA.ERROR} />)
+  .add('minimum data', () => <ProductivityStory data={PRODUCTIVITY_WIDGET_DATA.MIN} />)
+  .add('maximum data', () => <ProductivityStory data={PRODUCTIVITY_WIDGET_DATA.MAX} />);

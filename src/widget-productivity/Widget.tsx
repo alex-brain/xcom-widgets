@@ -42,6 +42,6 @@ interface IStatisticsWidgetState {}
 
 export class ProductivityWidget extends React.Component<IProductivityWidgetProps, IStatisticsWidgetState> {
   public render() {
-    return 'Make me work!';
+    return 'Make me work!' + this.props.users.length;
   }
 }
