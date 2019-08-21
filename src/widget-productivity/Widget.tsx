@@ -31,7 +31,7 @@ interface IProductivityWidgetItem {
   deals: IDealData;
 }
 
-interface IProductivityWidgetProps {
+export interface IProductivityWidgetProps {
   users: IUser[];
   isLoading: boolean;
   items: IProductivityWidgetItem[];

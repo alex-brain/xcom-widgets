@@ -23,7 +23,7 @@
 - внутри `ITroublesData`/`ICallsData`/`IDealData`:
   - все числа неотрицательные;
   - все поля `*Count` - целые числа;
-  - все поля `*Sum` - float с 2 знаками после запятой (копейки);
+  - все поля `*Sum` - целые числа;
   - `ICallsData.spentTime` - продолжительность в ms;
   - `0 <= ITroublesData.totalCount < 1000`;
   

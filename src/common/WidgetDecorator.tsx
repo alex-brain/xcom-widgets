@@ -12,7 +12,7 @@ const onShowDetailsHandler = action('Show Details');
 export const WidgetDecorator = (story: RenderFunction, context: IStorybookDecoratorContext) => {
   const widgetParams = context.parameters.widget;
 
-  const width = number('Ширина', 1000, widgetParams.width, WIDGET_GROUP_ID);
+  const width = number('Ширина', widgetParams.width.initial || 1000, widgetParams.width, WIDGET_GROUP_ID);
   const title = text('Заголовок', widgetParams.title, WIDGET_GROUP_ID);
   const actions = select('Действия', widgetParams.actions, NO_WIDGET_ACTIONS, WIDGET_GROUP_ID);
   const onShowDetails =
