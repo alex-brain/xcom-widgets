@@ -1,4 +1,4 @@
-@value CONTROL_LINE_HEIGHT, GRAY_COLOR, GRAY_X_LIGHT_COLOR, SMALL_FONT_SIZE from '../Variables.css';
+@value CONTROL_LINE_HEIGHT, GRAY_COLOR, GRAY_X_LIGHT_COLOR, SMALL_FONT_SIZE, BLUE_ACTIVE from '../Variables.css';
 
 .wrapper {
   border-radius: 4px;
@@ -38,9 +38,11 @@
   height: 24px;
   margin-left: 8px;
   border-radius: 12px;
+  color: GRAY_COLOR;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
-    background-color: GRAY_X_LIGHT_COLOR;
+    color: BLUE_ACTIVE;
   }
 }

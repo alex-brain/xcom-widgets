@@ -1,4 +1,4 @@
-import { IWidgetActionDescription } from '../@types/Storybook';
+import { IWidgetActionDescription, IWidgetParameters } from '../@types/Storybook';
 
 export const NO_WIDGET_ACTIONS: IWidgetActionDescription[] = [];
 export const SOME_WIDGET_ACTIONS: IWidgetActionDescription[] = [
@@ -11,17 +11,26 @@ export const SOME_WIDGET_ACTIONS: IWidgetActionDescription[] = [
     handler: () => {},
   },
 ];
-export const WIDGET_PARAMETERS = {
+
+export enum OnShowDetailsEnum {
+  Yes = 'yes',
+  No = 'no',
+}
+
+export const WIDGET_PARAMETERS: IWidgetParameters = {
   title: 'Название виджета',
-  canExpand: true,
+  onShowDetails: {
+    Yes: OnShowDetailsEnum.Yes,
+    No: OnShowDetailsEnum.No,
+  },
   actions: {
     None: NO_WIDGET_ACTIONS,
     Some: SOME_WIDGET_ACTIONS,
   },
   width: {
     range: true,
-    min: 200,
-    max: 1200,
+    min: 214,
+    max: 1016,
     step: 1,
   },
 };

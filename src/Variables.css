@@ -12,12 +12,14 @@
 @value MAIN_BG_COLOR: #F2F2F2;
 @value GRAY_COLOR: #808080;
 @value GRAY_LIGHT_COLOR: #CCC;
-@value GRAY_X_LIGHT_COLOR: #EEE;
+@value GRAY_X_LIGHT_COLOR: #A0A0A0;
 @value GRAY_DARK_COLOR: #666;
 @value PURPLE_COLOR: #9363DE;
+@value ERROR_COLOR: #DA2D2D;
 @value BLUE_LIGHT: #9ACFFF;
 @value BLUE_MAIN: #0D53A4;
 @value BLUE_ACTIVE: #0663CF;
+@value ROW_HOVERED: rgba(0, 0, 0, 0.05);
 
 
 /*Tokens*/
