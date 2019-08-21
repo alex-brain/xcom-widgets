@@ -1,4 +1,4 @@
-@value CONTROL_LINE_HEIGHT, GRAY_COLOR, GRAY_LIGHT_COLOR, SMALL_FONT_SIZE from 'Variables.css';
+@value CONTROL_LINE_HEIGHT, GRAY_COLOR, GRAY_X_LIGHT_COLOR, SMALL_FONT_SIZE from '../Variables.css';
 
 .wrapper {
   border-radius: 4px;
@@ -41,6 +41,6 @@
   cursor: pointer;
 
   &:hover {
-    background-color: GRAY_LIGHT_COLOR;
+    background-color: GRAY_X_LIGHT_COLOR;
   }
 }

@@ -1,16 +1,12 @@
 import React from 'react';
 import styles from './WidgetWrapper.css';
-import variables from './Variables.css';
+import variables from '../Variables.css';
 import { SvgIconProps } from '@skbkontur/react-icons/internal/SvgIcon';
 import ArrowSizeMaxIcon from '@skbkontur/react-icons/ArrowSizeMax';
 import MenuKebabIcon from '@skbkontur/react-icons/MenuKebab';
+import { IWidgetActionDescription } from '../@types/Storybook';
 
-interface IWidgetActionDescription {
-  name: string;
-  handler: () => void;
-}
-
-interface IWidgetWrapperProps {
+export interface IWidgetWrapperProps {
   width: number;
   title?: string;
   canExpand?: boolean;
