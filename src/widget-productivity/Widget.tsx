@@ -38,10 +38,10 @@ export interface IProductivityWidgetProps {
   onSelect: (id: string) => void;
 }
 
-interface IStatisticsWidgetState {}
+interface IProductivityWidgetState {}
 
-export class ProductivityWidget extends React.Component<IProductivityWidgetProps, IStatisticsWidgetState> {
+export class ProductivityWidget extends React.Component<IProductivityWidgetProps, IProductivityWidgetState> {
   public render() {
-    return 'Make me work!' + this.props.users.length;
+    return 'Make me work!';
   }
 }
