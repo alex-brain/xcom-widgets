@@ -1,31 +1,36 @@
 @value  GRAY_X_LIGHT_COLOR, SMALL_FONT_SIZE, STAGE_BACKLOG, ERROR_COLOR from '../Variables.css';
 
 .table {
+    width: 100%;
     min-width: 920px;
     max-width: 1016px;
     border-spacing: 0;
-}
-
-td {
     text-align: center;
-    padding-top: 7px;
-    padding-bottom: 5px;
 }
 
- tr.bottomborder td, tr.heading td {
+tr.bottomborder td, tr.heading td {
     border-bottom: 1px solid #E5E5E5;
 }
 
-tr {
+ .table td  {
+   padding: 7px 0 5px 0;
+}
+
+.table tr {
     border-left:1px solid transparent;
     border-right:1px solid transparent;
 }
 
-tr:hover td {
+.table tr:hover td {
     background:rgba(218,13,99,0.2);
     cursor: pointer;
-   
-;}
+}
+
+.summaryline:hover td {
+    background:#fff;
+    cursor: inherit;
+}
+
 
 .lefttext {
    display: flex;
@@ -33,7 +38,7 @@ tr:hover td {
 }
 
 .summarytitle {
-    padding-left: 32px;
+    padding-left: 38px !important;
     display: flex;
     justify-content: flex-start;
 }
@@ -49,15 +54,15 @@ tr:hover td {
 
 .avatar {
     border-radius: 24px;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
-.greysquare {
+.graycircle {
     width: 24px;
     height: 24px;
     background: STAGE_BACKLOG;
     border-radius: 24px;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 .manager {
@@ -70,30 +75,96 @@ tr:hover td {
     margin-left: 3px;
     font-size: SMALL_FONT_SIZE;
     color: GRAY_X_LIGHT_COLOR;
+    font-weight: normal;
 }
 
 .troubles {
     position: absolute;
     left: 20px;
     top: 5px;
-    padding: 1px;
+    padding: 1px 3px;
     background: ERROR_COLOR;
     font-size: 6px;
     color: #fff;
     border-radius: 6px;
 }
 
-.greytext {
+.graytext {
     color: GRAY_X_LIGHT_COLOR;
+    font-weight: normal;
 }
 
 .isloading {
     display: flex;
     align-items: center;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #E5E5E5;
 }
 
 .loadgradient {
     width: 112px;
     height: 6px;
-    background: linear-gradient(90deg, #E5E5E5 0%, rgba(229, 229, 229, 0) 88.39%);
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: fff;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
 }
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
+}
+
+.summarymonth {
+    border-left: 1px solid #E5E5E5;
+    text-align: right;
+}
+
+.summarymonthtitle {
+    border-left: 1px solid #E5E5E5;
+}
+
+.errorpage {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 90px;
+}
+
+.errormessage {
+   line-height: 24px;
+   color: GRAY_X_LIGHT_COLOR;
+   width: 367px;
+   margin: 0;
+   padding-left: 14px;
+}
+
+.floatright {
+    text-align: right;
+    width: 24px;
+    
+}
+
+.tabletitle {
+    padding: 0 10px !important; 
+}
+
+
+.calls {
+    padding-right: 30px !important; 
+    text-align: right;
+}
+
+.floatleft {
+    padding-right: 12px !important;
+    text-align: left;
+}
+
